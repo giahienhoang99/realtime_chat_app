@@ -14,10 +14,10 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 
-// app.get("/", (req, res) => {
-//     // root route http://localhost:5000/
-//     res.send("hello world");
-// });
+app.get("/", (req, res) => {
+    // root route http://localhost:5000/
+    res.send("hello world");
+});
 
 app.listen(PORT, () => {
     connectToMongoDB();
