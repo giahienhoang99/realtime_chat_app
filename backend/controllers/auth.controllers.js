@@ -60,12 +60,42 @@ export const signup = async (req,res) => {
     }
 };
 
-export const login = (req,res) => {
-    console.log("loginUser");
-    res.send("login");
+export const login = async (req,res) => {
+    try {
+        const {username, password} = req.body;
+        const user = await User.findOne({username});
+        const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
+
+        if (!user || !isPasswordCorrect) {
+            return res.status(400).json({ error: "Invalid username or password"});
+        }
+
+        generateTokenAndSetCookie(user._id, res);
+
+        res.status(200).json({
+            _id: user._id,
+            fullName: user.fullName,
+            username: user.username,
+            profilePic: user.profilePic,
+        });
+        
+    } catch (error) {
+        console.log("Error in login controller", error.message);
+        res.status(500).json({ error: "Internal Server Error"});
+    }
 };
 
-export const logout = (req,res) => {
-    console.log("logoutUser");
-    res.send("logout");
+export const logout = async (req,res) => {
+    try {
+        // logout means to clear the JWT stored in the cookie
+        // this line sets the value of jwt cookie to an empty string "" 
+        // and maxAge to 0 => the cookie expiration time = 0 
+        // => cookie is deleted from the client browser immediately
+        // res.cookie(name_of_cookie, value_to_be_stored_in_cookie, options)
+        res.cookie("jwt", "", { maxAge: 0 });
+        res.status(200).json({ message: "Logged out successfully" });
+    } catch (error) {
+        console.log("Error in logout controller", error.message);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
 };
