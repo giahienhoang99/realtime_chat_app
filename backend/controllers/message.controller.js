@@ -3,7 +3,10 @@ import Conversation from '../models/conversation.model.js';
 
 export const sendMessage = async (req,res) => {
     try {
+        // js object destructuring
         const {message} = req.body;
+        // object destructuring with renaming
+        // extract id from params and rename to receiverId
         const {id: receiverId} = req.params;
         const senderId = req.user._id; // accessible with the help of protectRoute in messageRoutes
 
@@ -28,6 +31,8 @@ export const sendMessage = async (req,res) => {
             conversation.messages.push(newMessage._id);
         }
 
+        // SOCKET IO FUNCTIONALITY WILL GO HERE
+
         //await conversation.save();
         //await newMessage.save();
         // this will save conversations and messages in parallel
@@ -37,6 +42,16 @@ export const sendMessage = async (req,res) => {
 
     } catch (error) {
         console.log("Error in sendMessage in message controller:", error.message);
+        res.status(500).json({ error: "Internal Server Error"});
+    }
+};
+
+export const getMessages = async (req,res) => {
+    try {
+        
+        
+    } catch (error) {
+        console.log("Error in getMessages in message controller:", error.message);
         res.status(500).json({ error: "Internal Server Error"});
     }
 };
