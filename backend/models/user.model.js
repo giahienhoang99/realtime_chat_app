@@ -24,7 +24,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    // createdAt, updatedAt
+    // createdAt, updatedAt 
+    // => can be used for feat. like: User joined on <createdAt>
 }, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
