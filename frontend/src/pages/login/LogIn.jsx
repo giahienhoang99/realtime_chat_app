@@ -15,7 +15,7 @@ const LogIn = () => {
                         <input
                             type="text"
                             placeholder="Enter your username"
-                            className="w-full input input-bordered text-rose-400 h-10 placeholder:text-rose-400"
+                            className="w-full input input-bordered bg-black bg-opacity-60 text-rose-400 h-10 placeholder:text-rose-400"
                         />
                     </div>
                     <div>
@@ -25,14 +25,14 @@ const LogIn = () => {
                         <input
                             type="password"
                             placeholder="Enter your password"
-                            className="w-full input input-bordered text-rose-400 h-10 placeholder:text-rose-400"
+                            className="w-full input input-bordered bg-black bg-opacity-60 text-rose-400 h-10 placeholder:text-rose-400"
                         />
                     </div>
                     <a href="#" className="text-xs text-white hover:underline hover:text-rose-300 mt-2 inline-block">
                         {"Don't"} have an account yet?
                     </a>
                     <div>
-                        <button className="btn btn-block btn-sm mt-2 text-rose-400">Log in</button>
+                        <button className="btn btn-block btn-sm mt-2 bg-black bg-opacity-60 text-rose-400">Log in</button>
                     </div>
                 </form>
             </div>
