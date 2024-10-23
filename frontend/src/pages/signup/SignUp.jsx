@@ -51,7 +51,7 @@ const SignUp = () => {
 
                     <GenderCheckbox />
 
-                    <a className="text-xs text-white hover:underline hover:text-rose-400 inline-block" href="#">
+                    <a className="text-xs text-white hover:underline hover:text-rose-200 inline-block" href="#">
                         Already have an account?
                     </a>
                     <div>
