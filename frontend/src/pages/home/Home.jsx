@@ -1,7 +1,11 @@
-import React from 'react'
+import Sidebar from "../../components/sidebar/Sidebar";
 
-export const home = () => {
+const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-white bg-clip-padding backdrop-filter backdrop-blur-0'>
+      <Sidebar />
+    </div>
+  );
+};
+
+export default Home;
