@@ -4,7 +4,7 @@ import MessageInput from './MessageInput';
 // message container aka chatbox
 const MessageContainer = () => {
     return (
-        <div className="bg-white w-[1000px] px-2 py-2 mb-2">
+        <div className="bg-white w-[1000px] px-2 py-2 mb-2 flex flex-col">
             {/* Header */}
             <div className="flex gap-2 items-center px-2">
                 <div className="avatar online">
@@ -15,8 +15,8 @@ const MessageContainer = () => {
                 <span className="text-black font-bold text-opacity-70">Hien Beo</span>
             </div>
             <div className="divider my-0 mx-1.5"/>
-            {/* <Messages/>
-            <MessageInput/> */}
+            <Messages/>
+            {/* <MessageInput/> */}
         </div>
     );
 };

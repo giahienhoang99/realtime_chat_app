@@ -1,7 +1,22 @@
+import Message from "./Message";
 
 const Messages = () => {
   return (
-    <div className="px-2 bg-rose-300">
+    <div className="px-2 flex-1 overflow-auto">
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
+      <Message />
       <Message />
     </div>
   );
