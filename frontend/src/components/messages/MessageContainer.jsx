@@ -16,7 +16,7 @@ const MessageContainer = () => {
             </div>
             <div className="divider my-0 mx-1.5"/>
             <Messages/>
-            {/* <MessageInput/> */}
+            <MessageInput/>
         </div>
     );
 };
