@@ -1,4 +1,4 @@
-const GenderCheckbox = () => {
+const GenderCheckbox = ({onCheckboxChange,selectedGender}) => {
     return (
         <div className="flex">
             <div className="form-control">
@@ -9,6 +9,8 @@ const GenderCheckbox = () => {
                         name="gender"
                         value="male"
                         className="radio radio-xs border-rose-400 checked:bg-rose-400 checked:border-rose-400"
+                        checked={selectedGender === "male"}
+                        onChange={() => onCheckboxChange("male")}
                     />
                 </label>
             </div>
@@ -20,6 +22,8 @@ const GenderCheckbox = () => {
                         name="gender"
                         value="female"
                         className="radio radio-xs border-rose-400 checked:bg-rose-400 checked:border-rose-400"
+                        checked={selectedGender === "female"}
+                        onChange={() => onCheckboxChange("female")}
                     />
                 </label>
             </div>
