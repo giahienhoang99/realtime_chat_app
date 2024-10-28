@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import GenderCheckbox from "./GenderCheckbox";
 import { useState } from "react";
+import useSignup from "../../hooks/useSignup";
 
 const SignUp = () => {
 
@@ -12,13 +13,15 @@ const SignUp = () => {
         gender: ''
     });
 
-    const handleSubmit = (e) => {
+    const { loading, signup } = useSignup();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(inputs);
+        await signup(inputs);
     }
-    
+
     const handleGenderCheckboxChange = (gender) => {
-        setInputs({...inputs, gender: gender});
+        setInputs({ ...inputs, gender: gender });
     }
 
     return (
@@ -42,9 +45,9 @@ const SignUp = () => {
                             // e.target = refers to the element that triggered the event (in this case, the input field)
                             // e.target.value = value of the input field
                             // ... is the spread operator in js => ...inputs means to copy all fields in inputs into a new obj
-                            onChange={(e) => setInputs({...inputs, fullName: e.target.value})}
-                            // this line means => on the event that input field is changed, set or update the input to a new obj
-                            // with fields copied from the predefined inputs but the fullName is overrided with the newly entered val in the field
+                            onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
+                        // this line means => on the event that input field is changed, set or update the input to a new obj
+                        // with fields copied from the predefined inputs but the fullName is overrided with the newly entered val in the field
                         />
                     </div>
                     <div>
@@ -56,7 +59,7 @@ const SignUp = () => {
                             placeholder="joemama"
                             className="w-full bg-black bg-opacity-60 text-rose-400 input input-bordered h-8 placeholder:text-rose-400"
                             value={inputs.username}
-                            onChange={(e) => setInputs({...inputs, username: e.target.value})}
+                            onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
                         />
                     </div>
                     <div>
@@ -68,7 +71,7 @@ const SignUp = () => {
                             placeholder="Enter your password"
                             className="w-full bg-black bg-opacity-60 text-rose-400 input input-bordered h-8 placeholder:text-rose-400"
                             value={inputs.password}
-                            onChange={(e) => setInputs({...inputs, password: e.target.value})}
+                            onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
                         />
                     </div>
                     <div>
@@ -80,7 +83,7 @@ const SignUp = () => {
                             placeholder="Re-enter your password"
                             className="w-full bg-black bg-opacity-60 text-rose-400 input input-bordered h-8 placeholder:text-rose-400"
                             value={inputs.confirmPassword}
-                            onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
+                            onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
                         />
                     </div>
 
