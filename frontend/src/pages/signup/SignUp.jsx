@@ -12,13 +12,19 @@ const SignUp = () => {
         gender: ''
     });
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(inputs);
+    }
+
     return (
         <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
             <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
                 <h1 className="text-3xl font-semibold text-center text-white">Sign Up for your
                     <span className="text-rose-400"> ChatApp</span>
                 </h1>
-                <form>
+
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label className="label p-2">
                             <span className="text-base text-white label-text">Full name</span>
