@@ -93,7 +93,10 @@ const SignUp = () => {
                         Already have an account?
                     </Link>
                     <div>
-                        <button className="bg-black bg-opacity-60 text-rose-400 h-8 btn btn-block btn-sm mt-2 border border-slate-700">Gimme my new account :D</button>
+                        <button
+                            className="bg-black bg-opacity-60 text-rose-400 h-8 btn btn-block btn-sm mt-2 border border-slate-700">
+                            {loading ? <span className="loading loading-spinner"></span> : "Gimme my new account :D"}
+                        </button>
                     </div>
                 </form>
             </div>
