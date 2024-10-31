@@ -1,6 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
 
 const LogIn = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const { loading, login } = useLogin();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await login(username, password);
+    }
 
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
@@ -35,7 +45,9 @@ const LogIn = () => {
                         {"Don't"} have an account yet?
                     </Link>
                     <div>
-                        <button className="btn btn-block btn-sm mt-2 bg-black bg-opacity-60 text-rose-400">Log in</button>
+                        <button className="btn btn-block btn-sm mt-2 bg-black bg-opacity-60 text-rose-400" disabled={loading}>
+                            {loading ? <span className="loading loading-spinner"></span> : "Log in"}
+                        </button>
                     </div>
                 </form>
             </div>
