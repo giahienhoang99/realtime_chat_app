@@ -5,6 +5,7 @@ import useLogin from "../../hooks/useLogin";
 const LogIn = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
     const { loading, login } = useLogin();
 
     const handleSubmit = async (e) => {
@@ -20,7 +21,7 @@ const LogIn = () => {
                     <span className='text-rose-400'> ChatApp</span>
                 </h1>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label className="label p-2">
                             <span className="text-base label-text text-white">Username</span>
@@ -29,6 +30,8 @@ const LogIn = () => {
                             type="text"
                             placeholder="Enter your username"
                             className="w-full input input-bordered bg-black bg-opacity-60 text-rose-400 h-10 placeholder:text-rose-400"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
                     <div>
@@ -39,6 +42,8 @@ const LogIn = () => {
                             type="password"
                             placeholder="Enter your password"
                             className="w-full input input-bordered bg-black bg-opacity-60 text-rose-400 h-10 placeholder:text-rose-400"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <Link to="/signup" className="text-xs text-white hover:underline hover:text-rose-300 mt-2 inline-block">
