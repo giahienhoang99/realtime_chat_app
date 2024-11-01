@@ -1,7 +1,17 @@
-const Conversation = ({conversation,lastIdx}) => {
+import useConversation from "../../zustand/useConversation";
+
+const Conversation = ({ conversation, lastIdx }) => {
+    const { selectedConversation, setSelectedConversation } = useConversation();
+    const isSelected = selectedConversation?._id === conversation._id;
+
     return (
         <>
-            <div className="flex gap-2 items-center hover:bg-rose-400 hover:text-white text-black text-opacity-70 rounded p-2 py-2 curs">
+            <div
+                className={`flex gap-2 items-center hover:bg-rose-400 hover:text-white text-black text-opacity-70 rounded p-2 py-2 cursor-pointer
+                    ${isSelected ? "bg-rose-400 text-white text-opacity-100" : ""}
+                `}
+                onClick={() => setSelectedConversation(conversation)}
+            >
                 <div className="avatar online">
                     <div className="w-12 bg-rose-300 rounded-full">
                         <img src={conversation.profilePic} alt="user avatar" />

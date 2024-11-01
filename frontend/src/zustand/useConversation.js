@@ -2,8 +2,8 @@ import { create } from 'zustand';
 
 // create a store
 const useConversation = create((set) => ({
-    selectedConversaion: null,
-    setSelectedConversation: (selectedConversaion) => set({ selectedConversaion }),
+    selectedConversation: null,
+    setSelectedConversation: (selectedConversation) => set({ selectedConversation }),
     messages: [],
     setMessages: (messages) => set({ messages }),
 
