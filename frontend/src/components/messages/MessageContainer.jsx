@@ -20,7 +20,7 @@ const MessageContainer = () => {
                                 <img src="https://avatar.iran.liara.run/public/49" alt="user avatar" />
                             </div>
                         </div>
-                        <span className="text-black font-bold text-opacity-70">Hien Beo</span>
+                        <span className="text-black font-bold text-opacity-70">{selectedConversation.fullName}</span>
                     </div>
                     {/* <div className="divider my-0 mx-1.5" /> */}
                     <Messages />
