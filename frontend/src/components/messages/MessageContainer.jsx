@@ -2,10 +2,16 @@ import Messages from './Messages';
 import MessageInput from './MessageInput';
 import { TiMessages } from "react-icons/ti";
 import useConversation from '../../zustand/useConversation';
+import { useEffect } from 'react';
 
 // message container aka chatbox
 const MessageContainer = () => {
     const {selectedConversation, setSelectedConversation} = useConversation();
+
+    useEffect(() => {
+        //cleanup function (unmounts)
+        return () => setSelectedConversation(null); // sett selected conv to null on cleanup
+    },[setSelectedConversation]);
 
     return (
         <div className="bg-white w-[1000px] px-2 py-2 mb-2 flex flex-col">
