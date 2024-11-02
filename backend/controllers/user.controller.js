@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 
 export const getUsersForSidebar = async (req,res) => {
     try {
-        const loggedInUserId = req.user._id;
+        //const loggedInUserId = req.user._id;
         // fetch all users from db (without password in params)
         const allUsers = await User.find().select("-password");
 
