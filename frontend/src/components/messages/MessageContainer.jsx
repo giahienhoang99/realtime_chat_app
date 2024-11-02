@@ -17,12 +17,12 @@ const MessageContainer = () => {
                     <div className="flex gap-2 items-center px-2">
                         <div className="avatar online">
                             <div className="w-12 bg-rose-300 rounded-full">
-                                <img src="https://avatar.iran.liara.run/public/49" alt="user avatar" />
+                                <img src={selectedConversation.profilePic} alt="user avatar" />
                             </div>
                         </div>
                         <span className="text-black font-bold text-opacity-70">{selectedConversation.fullName}</span>
                     </div>
-                    {/* <div className="divider my-0 mx-1.5" /> */}
+                    <div className="divider my-0 mx-1.5" />
                     <Messages />
                     <MessageInput />
                 </>
