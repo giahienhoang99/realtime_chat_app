@@ -4,13 +4,13 @@ import { getRandomEmoji } from "../../utils/emojis";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
-  console.log("CONVERSATIONS:", conversations);
+  //console.log("CONVERSATIONS:", conversations);
 
   return (
     <div className="mt-0 flex flex-col overflow-auto">
       {conversations.map((conversation, idx) => (
         <Conversation
-          key={conversation.id}
+          key={conversation._id}
           conversation={conversation}
           emoji={getRandomEmoji()}
           lastIdx={idx === conversations.length - 1}
