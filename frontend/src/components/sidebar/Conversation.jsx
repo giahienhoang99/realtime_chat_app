@@ -7,8 +7,8 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
     return (
         <>
             <div
-                className={`flex gap-2 items-center hover:bg-rose-400 hover:text-white text-black text-opacity-70 rounded p-2 py-2 cursor-pointer
-                    ${isSelected ? "bg-rose-400 text-white text-opacity-100" : ""}
+                className={`flex gap-2 items-center hover:bg-rose-400 hover:text-white text-black text-opacity-100 rounded p-2 py-2 cursor-pointer
+                    ${isSelected ? "bg-rose-400 text-white" : ""}
                 `}
                 onClick={() => setSelectedConversation(conversation)}
             >
