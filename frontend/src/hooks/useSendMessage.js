@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const useSendMessage = () => {
     const [loading, setLoading] = useState(false);
-    const { messages, setMessage, selectedConversation } = useConversation();
+    const { messages, setMessages, selectedConversation } = useConversation();
 
     const sendMessage = async (message) => {
         setLoading(true);
@@ -23,13 +23,20 @@ const useSendMessage = () => {
             if (data.error) {
                 throw new Error(data.error);
             }
-            setConversations(data);
+
+            //[...messages, data] uses the spread operator (...), which takes all existing items in messages 
+            //(an array of chat messages) and includes them in a new array. Then, it appends data (the new 
+            //message data received from the server)
+            setMessages([...messages, data]);
+
         } catch (error) {
             toast.error(error.message);
         } finally {
             setLoading(false);
         }
-    }
+    };
+
+    return {sendMessage, loading};
 };
 
 export default useSendMessage;
