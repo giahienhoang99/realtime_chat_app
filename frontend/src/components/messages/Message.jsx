@@ -9,7 +9,7 @@ const Message = ({ message }) => {
     const fromMe = (message.senderId === authUser._id);
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
     const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
-    const bubbleBgColor = fromMe ? 'bg-rose-400' : "";
+    const bubbleBgColor = fromMe ? 'bg-rose-400' : 'bg-black bg-opacity-60';
 
 
     return (
@@ -22,7 +22,7 @@ const Message = ({ message }) => {
                             src={profilePic} />
                     </div>
                 </div>
-                <div className={`chat-bubble text-white bg-rose-400 ${bubbleBgColor}`}>{message.message}</div>
+                <div className={`chat-bubble text-white ${bubbleBgColor}`}>{message.message}</div>
                 <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">12:42</div>
             </div>
         </div>
