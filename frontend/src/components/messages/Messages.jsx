@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 const Messages = () => {
   const { messages, loading } = useGetMessages();
   //console.log("messages:", messages);
-  const lastMessageRef = useRef();
+  const lastMessageRef = useRef(null);
 
   useEffect(() => {
     // Scroll to the last message whenever messages change

@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
 
 // if only use (message) => error since message is the key in the mapping in Messages.jsx
 // therefore, use {message} to destructure the message key and directly access the message data mapped to the key
-const Message = ({ message }) => {
+const Message = forwardRef(({ message }, ref) => {
     const { authUser } = useAuthContext();
     const { selectedConversation } = useConversation();
     const fromMe = (message.senderId === authUser._id);
@@ -29,7 +30,7 @@ const Message = ({ message }) => {
             </div>
         </div>
     );
-};
+});
 
 export default Message;
 
