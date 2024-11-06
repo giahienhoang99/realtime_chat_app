@@ -2,10 +2,12 @@ import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import useGetConversations from "../../hooks/useGetConversations";
 import toast from "react-hot-toast";
+import useConversation from "../../zustand/useConversation";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
-  const { setSelectedConversation } = useGetConversations();
+  const { setSelectedConversation } = useConversation();
+  const { conversations } = useGetConversations();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const SearchBar = () => {
       return toast.error('Search term must be longer than 3 characters');
     }
 
-    const conversation = conversation.find((c) => c.fullName.toLowerCase().includes(search.toLowerCase()));
+    const conversation = conversations.find((c) => c.fullName.toLowerCase().includes(search.toLowerCase()));
     if (conversation) {
       setSelectedConversation(conversation);
       setSearch("");
