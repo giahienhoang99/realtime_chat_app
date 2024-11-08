@@ -35,21 +35,25 @@ const SearchBar = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {/* Searchbar for dark mode */}
-      {/* <input
-        type="text"
-        placeholder="Search here ..."
-        className="input input-bordered text-rose-400 border-rose-400 input-primary w-full max-w-xs 
-        placeholder:text-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-rose-400"
-      /> */}
       <button type="submit" className="btn btn-circle border-rose-400 bg-white hover:bg-rose-400 hover:border-rose-400 hover:text-white bg-opacity-85 text-rose-400">
         <IoSearch className="w-6 h-6 outline-none" />
       </button>
-      {/* Button for dark mode */}
-      {/* <button type="submit" className="btn btn-circle bg-black bg-opacity-85 text-rose-400">
-        <IoSearch className="w-6 h-6 outline-none" />
-      </button> */}
     </form>
+    // in progress - dark mode
+  //   <form onSubmit={handleSubmit} className="h-8 flex items-center gap-2">
+  //   <input
+  //     type="text"
+  //     placeholder="Search here ..."
+  //     className="input input-bordered text-rose-400 bg-black border-rose-400 input-primary w-full max-w-xs 
+  //     placeholder:text-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-rose-400"
+  //     value={search}
+  //     onChange={(e) => setSearch(e.target.value)}
+  //   />
+  //   <button type="submit" className="btn btn-circle bg-black bg-opacity-85 text-rose-400 hover:bg-rose-400 hover:border-rose-400 hover:text-white">
+  //     <IoSearch className="w-6 h-6 outline-none" />
+  //   </button>
+  // </form>
+  
   )
 }
 
