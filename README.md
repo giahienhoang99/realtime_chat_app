@@ -1,4 +1,4 @@
-<Development in progress>
+Development in progress
 
 MERN Stack Project: Real-Time Chat App | JWT, Socket.io
 
