@@ -23,11 +23,11 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
-    // root route http://localhost:5000/
+    // root route http://localhost:5001/
     res.send("hello world");
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     connectToMongoDB();
     console.log(`Server running on port ${PORT}`)
 });
