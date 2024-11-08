@@ -4,7 +4,7 @@ export function extractTime(dateString) {
     const mins = padZero(date.getMinutes());
     return `${hours}:${mins}`;
 }
-// pad single-digit nuymbers with a leading zero
+// pad single-digit numbers with a leading zero
 function padZero(number) {
     return number.toString().padStart(2,"0");
 }
