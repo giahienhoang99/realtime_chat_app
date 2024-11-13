@@ -12,7 +12,8 @@ const io = new Server(server, {
     },
 });
 
-const userSocketMap = {}; // {userId: socketId} map userId to socketID
+// {userId: socketId} map userId to socketID
+const userSocketMap = {};
 
 io.on("connection", (socket) => {
     console.log("a user connected", socket.id);
