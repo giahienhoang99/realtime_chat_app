@@ -12,6 +12,8 @@ const io = new Server(server, {
     },
 });
 
+const userSocketMap = {}; // {userId: socketId} map userId to socketID
+
 io.on("connection", (socket) => {
     console.log("a user connected", socket.id);
     // socket.on is used to listen to the events. can be used both on client and server side
