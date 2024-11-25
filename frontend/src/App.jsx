@@ -1,6 +1,6 @@
 import LogIn from './pages/login/LogIn';
 import SignUp from './pages/signup/SignUp';
-import Home from './pages/home/home';
+import Home from './pages/home/Home';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
