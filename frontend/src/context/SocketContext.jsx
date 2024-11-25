@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (authUser) {
-            const socket = io("http://localhost:5001", {
+            const socket = io("https://mern-realtime-chat-app-vg7s.onrender.com", { // http://localhost:5001
                 query: {
                     userId: authUser._id,
                 },
