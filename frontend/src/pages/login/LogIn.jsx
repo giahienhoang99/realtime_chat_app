@@ -20,6 +20,8 @@ const LogIn = () => {
                     Log in to your
                     <span className='text-rose-400'> ChatApp</span>
                 </h1>
+                <h3>Can log in using the following credentials:</h3>
+                <h3>Username and Password: joemama</h3>
 
                 <form onSubmit={handleSubmit}>
                     <div>
